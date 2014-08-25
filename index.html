@@ -3,10 +3,10 @@
 	<head>
 		<title>mouse multiple parallax</title>
 		
-		<link href='http://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
 		<style>
-			/* parallax style */
+			/* parallax layers style */
 			#parallax1{
 				background: url('img/paint1.jpg') no-repeat -25px -25px;
 				background-size: calc(100% + 50px);
@@ -30,50 +30,87 @@
 			}
 
 
-			/* other style */
+
+			/* other style for the demo page*/
 			html,body{
 				height:100%;
 				margin: 0;
 				padding: 0;
 				background-color: #01678D;
+				color: #EDEEF0;
+				font-family: 'Open Sans', sans-serif;
+				font-size: 18px;
+				background-image: url('img/gray.png');
 			}
 			div{
 				margin: 0;
 				padding: 0;
 			}
-			.container{
+			#wrapper{
+				width: 750px;
+				margin: 20px auto;
+			}
+			#container{
 				width: 750px;
 				height: 600px;
 				margin: 20px auto;
-				-webkit-box-shadow: 0px 0px 35px 0px rgba(65, 65, 65, 0.75);
-				-moz-box-shadow:    0px 0px 35px 0px rgba(65, 65, 65, 0.75);
-				box-shadow:         0px 0px 35px 0px rgba(65, 65, 65, 0.75);
+				-webkit-box-shadow: 0px 8px 35px 8px rgba(65, 65, 65, 0.75);
+				-moz-box-shadow:    0px 8px 35px 8px rgba(65, 65, 65, 0.75);
+				box-shadow:         0px 8px 35px 8px rgba(65, 65, 65, 0.75);
 			}
 			h1{
-				text-align: center;
-				color: #EDEEF0;
-				text-transform: uppercase;
-				font-family: 'Coming Soon', cursive;
 				font-size: 40px;
+				text-align: center;
 			}
+			h3{
+				font-size: 22px;
+			}
+			ul{
+				padding: 0;
+				margin: 0;
+			}
+			li{
+				display: inline-block;
+				margin-right: 10px;
+			}
+			a:link,
+			a:active,
+			a:visited{
+				color: #EDEEF0;
+				text-decoration: none;
+				border-bottom: 1px dotted #EDEEF0;
+			}
+			a:hover{
+				border-bottom: 1px solid #EDEEF0;
+			}
+
 		</style>
 	</head>
 	<body>
-		<h1>Parallax mouse hover</h1>
-		<div class="container">
+		<p style="text-align: center; margin: 40px;"><span style="font-size:40px;">Mouse hover parallax:</span> parallax effect on mouse hover</p>
+		<div id="wrapper">
+			<h3>demo:</h3>
+			<div id="container">
 
 
 
-			<!--parallax -->
-			<div id="parallax1">
-				<div id="parallax2">
-					<div id="parallax3">
-					</div>
+				<!--parallax layers-->
+				<div id="parallax1">
+					<div id="parallax2">
+						<div id="parallax3">
+						</div>
+					</div> 
 				</div> 
-			</div> 
 
 
 
+			</div>
+			<h3>How it works:</h1>
+			<h3>Download:</h3>
+			<ul>
+				<li><a href="https://github.com/chielorenz/mouseHoverParallax" title="project on gitjub">github</a></li>	
+				<li><a href="https://github.com/chielorenz/mouseHoverParallax/archive/master.zip" title="download zip">download zip</a></li>	
+			</ul>
 		</div>
 
 		<!-- jquery -->
@@ -102,7 +139,6 @@
 					var newvalueX = width * pageX * -1 - 25;
 					var newvalueY = height * pageY * -1 - 25;
 					$(obj).css("background-position", newvalueX + "px " + newvalueY + "px");
-					console.log(pageY);
 				}
 
 			});
