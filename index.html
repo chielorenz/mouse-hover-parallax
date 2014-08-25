@@ -2,25 +2,27 @@
 <html>
 	<head>
 		<title>mouse multiple parallax</title>
-	
+		
+		<link href='http://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
+
 		<style>
 			/* parallax style */
 			#parallax1{
-				background: url('img/paint1.jpg') -25px -25px;
+				background: url('img/paint1.jpg') no-repeat -25px -25px;
 				background-size: calc(100% + 50px);
 				width: 750px;
 				height: 600px;
 				z-index: 1;
 			}
 			#parallax2{
-				background: url('img/paint2.png') -25px -25px;
+				background: url('img/paint2.png') no-repeat -25px -25px;
 				background-size: calc(100% + 50px);
 				width: 750px;
 				height: 600px;
 				z-index: 2;
 			}
 			#parallax3{
-				background: url('img/paint3.png') -25px -25px;
+				background: url('img/paint3.png') no-repeat -25px -25px;
 				background-size: calc(100% + 50px);
 				width: 750px;
 				height: 600px;
@@ -33,7 +35,7 @@
 				height:100%;
 				margin: 0;
 				padding: 0;
-				background-color: #303030;
+				background-color: #01678D;
 			}
 			div{
 				margin: 0;
@@ -43,23 +45,30 @@
 				width: 750px;
 				height: 600px;
 				margin: 20px auto;
+				-webkit-box-shadow: 0px 0px 35px 0px rgba(65, 65, 65, 0.75);
+				-moz-box-shadow:    0px 0px 35px 0px rgba(65, 65, 65, 0.75);
+				box-shadow:         0px 0px 35px 0px rgba(65, 65, 65, 0.75);
 			}
 			h1{
 				text-align: center;
-				color: #EFEFEF;
+				color: #EDEEF0;
 				text-transform: uppercase;
+				font-family: 'Coming Soon', cursive;
+				font-size: 40px;
 			}
 		</style>
 	</head>
 	<body>
+		<h1>Parallax mouse hover</h1>
 		<div class="container">
-			<h1>Parallax mouse hover</h1>
+
 
 
 			<!--parallax -->
 			<div id="parallax1">
 				<div id="parallax2">
-					<div id="parallax3"></div>
+					<div id="parallax3">
+					</div>
 				</div> 
 			</div> 
 
@@ -86,13 +95,14 @@
 				});
 
 				function parallax(obj, e, strength){
-					var width = strength / $(window).width();
-					var height = strength / $(window).height();
+					var width = strength / $(obj).width();
+					var height = strength / $(obj).height();
 					var pageX = e.pageX - ($(window).width() / 2);
-					var pageY = e.pageY - ($(window).height() / 2);
+					var pageY = e.pageY - ($(window).height() / 2) - $(window).scrollTop();
 					var newvalueX = width * pageX * -1 - 25;
 					var newvalueY = height * pageY * -1 - 25;
 					$(obj).css("background-position", newvalueX + "px " + newvalueY + "px");
+					console.log(pageY);
 				}
 
 			});
