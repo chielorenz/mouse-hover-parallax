@@ -119,6 +119,7 @@
 		<script>
 			$(document).ready(function(){
 
+				/*Call to parallax function for each layer*/
 				$("#parallax1").mousemove(function(e){
 					parallax(this, e, 25);
 				});
@@ -131,6 +132,7 @@
 					parallax(this, e, 125);
 				});
 
+				/*Parallax function*/
 				function parallax(obj, e, strength){
 					var width = strength / $(obj).width();
 					var height = strength / $(obj).height();
