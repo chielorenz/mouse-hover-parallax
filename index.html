@@ -8,21 +8,21 @@
 		<style>
 			/* parallax layers style */
 			#parallax1{
-				background: url('img/paint1.jpg') no-repeat -25px -25px;
+				background: url('img/paint1.jpg') no-repeat center  center ;
 				background-size: calc(100% + 50px);
 				width: 750px;
 				height: 600px;
 				z-index: 1;
 			}
 			#parallax2{
-				background: url('img/paint2.png') no-repeat -25px -25px;
+				background: url('img/paint2.png') no-repeat center  center;
 				background-size: calc(100% + 50px);
 				width: 750px;
 				height: 600px;
 				z-index: 2;
 			}
 			#parallax3{
-				background: url('img/paint3.png') no-repeat -25px -25px;
+				background: url('img/paint3.png') no-repeat center  center;
 				background-size: calc(100% + 50px);
 				width: 750px;
 				height: 600px;
@@ -30,67 +30,96 @@
 			}
 
 
-
 			/* other style for the demo page*/
-			html,body{
-				height:100%;
+			body{
 				margin: 0;
 				padding: 0;
-				background-color: #01678D;
-				color: #EDEEF0;
+				background-color: #346387;
 				font-family: 'Open Sans', sans-serif;
-				font-size: 18px;
 				background-image: url('img/gray.png');
+				font-size: 20px;
 			}
-			div{
-				margin: 0;
-				padding: 0;
+			header{
+				width: 100%;
+				text-align: center;
+				overflow: hidden;
+				color: #efefef;
 			}
-			#wrapper{
-				width: 750px;
-				margin: 20px auto;
+			header h1{
+				font-size: 48px;
+				font-weight: 400;
+				margin: 20px;
+				text-transform: uppercase;
 			}
-			#container{
+			header h3{
+				font-size: 25px;
+				font-weight: 400;
+				margin: 20px;
+			}
+			.content{
+				width: 70%;
+				margin: 0 auto;
+				color: #efefef;
+			}
+			.content h2{
+				padding: 10px;
+				border-bottom: 1px dotted #efefef;
+				font-weight: 400;
+			}
+			.content ul{
+				list-style: circle;
+			}
+			.wrapper{
 				width: 750px;
 				height: 600px;
-				margin: 20px auto;
-				-webkit-box-shadow: 0px 8px 35px 8px rgba(65, 65, 65, 0.75);
-				-moz-box-shadow:    0px 8px 35px 8px rgba(65, 65, 65, 0.75);
-				box-shadow:         0px 8px 35px 8px rgba(65, 65, 65, 0.75);
+				margin: 40px auto;
+				-webkit-box-shadow: 0px 0px 30px 8px rgba(65, 65, 65, 0.5);
+				-moz-box-shadow:    0px 0px 30px 8px rgba(65, 65, 65, 0.5);
+				box-shadow:         0px 0px 30px 8px rgba(65, 65, 65, 0.5);
 			}
-			h1{
-				font-size: 40px;
+			.entry{
+				margin: 40px 0;
+			}
+			.entry a{
+				width: 40%;
+				float: left;
+				margin: 60px 5% 80px 5%;
+			}
+			.entry a:link,
+			.entry a:active,
+			.entry a:visited{
+				text-decoration: none;
+				background-color: #efefef;
+				color: #346387;
+				padding: 8px 0;
 				text-align: center;
 			}
-			h3{
-				font-size: 22px;
+			.entry a:hover{
+				-webkit-box-shadow: 0px 0px 30px 8px rgba(255, 255, 255, 0.2);
+				-moz-box-shadow:    0px 0px 30px 8px rgba(255, 255, 255, 0.2);
+				box-shadow:         0px 0px 30px 8px rgba(255, 255, 255, 0.2);
 			}
-			ul{
-				padding: 0;
-				margin: 0;
+			.code{
+				margin: 10px;
+				border: 1px solid #efefef;
+				background-color: #414141;
+				color: #efefef;
+				overflow: scroll;
 			}
-			li{
-				display: inline-block;
-				margin-right: 10px;
+			.code p{
+				margin: 10px;
 			}
-			a:link,
-			a:active,
-			a:visited{
-				color: #EDEEF0;
-				text-decoration: none;
-				border-bottom: 1px dotted #EDEEF0;
-			}
-			a:hover{
-				border-bottom: 1px solid #EDEEF0;
-			}
-
 		</style>
 	</head>
 	<body>
-		<p style="text-align: center; margin: 40px;"><span style="font-size:40px;">Mouse hover parallax:</span> parallax effect on mouse hover</p>
-		<div id="wrapper">
-			<h3>demo:</h3>
-			<div id="container">
+		<header>
+			<h1>Mouse hover parallax</h1>
+			<h3>three layers parallax effect on mouse hover</h3>
+		</header>
+		<div class="content">
+			<h2>Demo:</h2>
+			<p>Hover the image (sorry no touch) to see the effect:</p>
+			<div class="wrapper">
 
 
 
@@ -105,12 +134,57 @@
 
 
 			</div>
-			<h3>How it works:</h1>
-			<h3>Download:</h3>
-			<ul>
-				<li><a href="https://github.com/chielorenz/mouseHoverParallax" title="project on gitjub">github</a></li>	
-				<li><a href="https://github.com/chielorenz/mouseHoverParallax/archive/master.zip" title="download zip">download zip</a></li>	
-			</ul>
+			<div class="entry">
+				<h2>How it works:</h2>
+				<div class="code">
+<pre>
+  /*HTML code*/
+
+  &#60;div id="parallax1"&#62;
+    &#60;div id="parallax2"&#62;
+      &#60;div id="parallax3"&#62;
+      &#60;/div&#62;
+    &#60;/div&#62;
+  &#60;/div&#62;
+</pre>
+				</div>
+				<div class="code">
+<pre>
+  /*JavaScript code*/
+
+  $("#parallax1").mousemove(function(e){
+    parallax(this, e, 25);
+  });
+
+  $("#parallax2").mousemove(function(e){
+    parallax(this, e, 75);
+  });
+
+  $("#parallax3").mousemove(function(e){
+    parallax(this, e, 125);
+  });
+</pre>
+				</div>
+				<div class="code">
+<pre>
+  /*JavaScript code*/
+
+  function parallax(obj, e, strength){
+    var width = strength / $(obj).width();
+    var height = strength / $(obj).height();
+    var pageX = e.pageX - ($(window).width() / 2);
+    var pageY = e.pageY - ($(window).height() / 2) - $(window).scrollTop();
+    var newvalueX = width * pageX * -1 - 25;
+    var newvalueY = height * pageY * -1 - 25;
+    $(obj).css("background-position", newvalueX + "px " + newvalueY + "px");
+  }</pre>
+				</div>
+			</div>
+			<div class="entry">
+				<h2>Download:</h2>
+				<a href="https://github.com/chielorenz/mouseHoverParallax" title="project on gitjub">see on github</a>
+				<a href="https://github.com/chielorenz/mouseHoverParallax/archive/master.zip" title="download zip">download zip</a>	
+			</div>
 		</div>
 
 		<!-- jquery -->
