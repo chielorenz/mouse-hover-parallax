@@ -31,76 +31,61 @@
 
 
 			/* other style for the demo page*/
-			body{
+			html, body{
 				margin: 0;
 				padding: 0;
-				background-color: #346387;
 				font-family: 'Open Sans', sans-serif;
-				background-image: url('img/gray.png');
-				font-size: 20px;
+				color: #efefef;
+				font-size: 18px;
+				background: url('img/gray.png');
+				background-color: #346387;
 			}
 			header{
-				width: 100%;
-				text-align: center;
 				overflow: hidden;
-				color: #efefef;
+				text-align: center;
 			}
 			header h1{
-				font-size: 48px;
-				font-weight: 400;
-				margin: 20px;
-				text-transform: uppercase;
+				margin: 40px 0 10px 0;
 			}
-			header h3{
-				font-size: 25px;
-				font-weight: 400;
-				margin: 20px;
+			nav{
+				margin: 10px 0 40px 0;
 			}
-			.content{
-				width: 70%;
-				margin: 0 auto;
+			nav a:link,
+			nav a:visited,
+			nav a:active{
+				display: inline-block;
 				color: #efefef;
+				text-decoration: none;
+				border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+				margin: 8px;
+				padding: 5px;
 			}
-			.content h2{
-				padding: 10px;
-				border-bottom: 1px dotted #efefef;
-				font-weight: 400;
+			nav a:hover{
+				border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 			}
-			.content ul{
-				list-style: circle;
+			.fill{
+				width: 70%;
+				margin: 20px auto;
+				overflow: hidden;
+			}
+			.fill h2{
+				border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+				margin: 20px 0;
 			}
 			.wrapper{
 				width: 750px;
 				height: 600px;
-				margin: 40px auto;
+				margin: 20px auto;
 				-webkit-box-shadow: 0px 0px 30px 8px rgba(65, 65, 65, 0.5);
 				-moz-box-shadow:    0px 0px 30px 8px rgba(65, 65, 65, 0.5);
 				box-shadow:         0px 0px 30px 8px rgba(65, 65, 65, 0.5);
 			}
-			.entry{
-				margin: 40px 0;
-			}
-			.entry a{
-				width: 40%;
-				float: left;
-				margin: 60px 5% 80px 5%;
-			}
-			.entry a:link,
-			.entry a:active,
-			.entry a:visited{
-				text-decoration: none;
-				background-color: #efefef;
-				color: #346387;
-				padding: 8px 0;
-				text-align: center;
-			}
-			.entry a:hover{
-				-webkit-box-shadow: 0px 0px 30px 8px rgba(255, 255, 255, 0.2);
-				-moz-box-shadow:    0px 0px 30px 8px rgba(255, 255, 255, 0.2);
-				box-shadow:         0px 0px 30px 8px rgba(255, 255, 255, 0.2);
+			.coloredBg{
+				background-color: rgba(255, 255, 255, 0.15);
+				padding: 20px 0;
 			}
 			.code{
-				margin: 10px;
+				margin: 20px 0;
 				border: 1px solid #efefef;
 				background-color: #414141;
 				color: #efefef;
@@ -109,16 +94,37 @@
 			.code p{
 				margin: 10px;
 			}
+			#download a{
+				width: 34%;
+				float: left;
+				margin: 20px 8%;
+			}
+			#download a:link,
+			#download a:active,
+			#download a:visited{
+				text-decoration: none;
+				background-color: #efefef;
+				color: #346387;
+				padding: 8px 0;
+				text-align: center;
+			}
+			#download a:hover{
+				-webkit-box-shadow: 0px 0px 30px 8px rgba(255, 255, 255, 0.2);
+				-moz-box-shadow:    0px 0px 30px 8px rgba(255, 255, 255, 0.2);
+				box-shadow:         0px 0px 30px 8px rgba(255, 255, 255, 0.2);
+			}
 		</style>
 	</head>
 	<body>
 		<header>
-			<h1>Mouse hover parallax</h1>
-			<h3>three layers parallax effect on mouse hover</h3>
+			<h1>Parallax effect on mouse hover</h1>
+			<nav>
+				<a href="#demo" title="go to demo">demo</a>
+				<a href="#how" title="go to how it works">how it works</a>
+				<a href="#download" title="go to download">download</a>
+			</nav>
 		</header>
-		<div class="content">
-			<h2>Demo:</h2>
-			<p>Hover the image (sorry no touch) to see the effect:</p>
+		<div id="demo" class="coloredBg">
 			<div class="wrapper">
 
 
@@ -134,9 +140,10 @@
 
 
 			</div>
-			<div class="entry">
-				<h2>How it works:</h2>
-				<div class="code">
+		</div>
+		<div id="how" class="fill">
+			<h2>How it works:</h2>
+			<div class="code">
 <pre>
   /*HTML code*/
 
@@ -147,8 +154,8 @@
     &#60;/div&#62;
   &#60;/div&#62;
 </pre>
-				</div>
-				<div class="code">
+			</div>
+			<div class="code">
 <pre>
   /*JavaScript code*/
 
@@ -164,8 +171,8 @@
     parallax(this, e, 125);
   });
 </pre>
-				</div>
-				<div class="code">
+			</div>
+			<div class="code">
 <pre>
   /*JavaScript code*/
 
@@ -178,13 +185,12 @@
     var newvalueY = height * pageY * -1 - 25;
     $(obj).css("background-position", newvalueX + "px " + newvalueY + "px");
   }</pre>
-				</div>
 			</div>
-			<div class="entry">
-				<h2>Download:</h2>
-				<a href="https://github.com/chielorenz/mouseHoverParallax" title="project on gitjub">see on github</a>
-				<a href="https://github.com/chielorenz/mouseHoverParallax/archive/master.zip" title="download zip">download zip</a>	
-			</div>
+		</div>
+		<div id="download" class="fill">
+			<h2>Download:</h2>
+			<a href="https://github.com/chielorenz/mouseHoverParallax" title="project on gitjub">see on github</a>
+			<a href="https://github.com/chielorenz/mouseHoverParallax/archive/master.zip" title="download zip">download zip</a>	
 		</div>
 
 		<!-- jquery -->
