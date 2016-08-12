@@ -1,5 +1,5 @@
 ##Parallax effect on mouse hover
-[Demo](http://www.lucalorenzini.org/projects/mouseHoverParallax/demo/mouseHoverParallaxDemo.html)
+[Demo](http://luca.design/projects/mouseHoverParallax/demo/mouseHoverParallaxDemo.html)
 
 ##About
 This project is a simple example of parallax background images on mouse hover.
